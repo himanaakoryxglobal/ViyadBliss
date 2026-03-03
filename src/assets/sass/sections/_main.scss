@@ -148,6 +148,137 @@
   }
 }
 
+
+/* =============================
+   Featured Amenity Card Style
+============================= */
+
+/* =============================
+   Sticky Featured Amenity Card
+============================= */
+
+.featured-amenity-wrapper {
+  position: relative;
+}
+
+.featured-amenity-card {
+  background: linear-gradient(135deg, #0f172b, #1e293b);
+  color: #fff;
+  padding: 70px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
+  position: sticky;
+  top: 120px; /* adjust based on header height */
+  z-index: 10;
+}
+
+.featured-amenity-card h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.featured-amenity-card p {
+  font-size: 18px;
+  opacity: 0.9;
+} 
+
+
+.amenities-section {
+  position: relative;
+}
+
+.amenities-scroll-progress {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00c6ff, #0072ff);
+  transform-origin: top;
+  border-radius: 10px;
+  z-index: 50;
+}
+
+
+.floating-amenity-card {
+  position: fixed;
+  right: 20px;
+  top: 120px;
+  width: 220px;
+  padding: 20px;
+  background: #0f172b;
+  color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 999999;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+} 
+
+
+.scrollbar-attached-card {
+  position: fixed;
+  right: 6px;
+  width: 220px;
+  padding: 18px 20px;
+  background: linear-gradient(135deg, #0f172b, #1e293b);
+  color: #fff;
+  border-radius: 14px;
+  text-align: center;
+  z-index: 9999;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+/* ===============================
+   Separate Arrow Amenity Card
+================================ */
+
+.amenity-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  transition: 0.3s ease;
+}
+
+.amenity-main-card {
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 12px 0 0 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  flex: 1;
+  transition: 0.3s ease;
+}
+
+.amenity-arrow-card {
+  background: #0f172b;
+  color: #ffffff;
+  padding: 50px 25px;
+  border-radius: 0 12px 12px 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.amenity-wrapper:hover .amenity-main-card {
+  transform: translateY(-6px);
+}
+
+.amenity-wrapper:hover .amenity-arrow-card {
+  background: #1e293b;
+}
+
+/* Icon */
+.category-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  display: block;
+}
+
 .bg-image {
   background-size: cover;
   background-position: center center;
