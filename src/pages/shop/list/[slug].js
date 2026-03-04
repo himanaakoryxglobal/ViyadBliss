@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import Link from "next/link";
 import Slider from "react-slick";
 import {

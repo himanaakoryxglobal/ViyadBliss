@@ -12,7 +12,7 @@ import HeroSectionStyleThree from "@/components/hero/styleThree";
 import PropertyItem from "@/components/product/properties";
 import { useSelector } from "react-redux";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import blogData from "@/data/blog";
 import BlogItem from "@/components/blog";
 import CallToAction from "@/components/callToAction";

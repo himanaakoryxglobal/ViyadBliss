@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Slider from "react-slick";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import { FaPlay, FaHome, FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 function HeroSectionStyleOne({ data }) {

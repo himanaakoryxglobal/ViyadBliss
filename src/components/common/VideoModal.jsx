@@ -1,17 +1,17 @@
 "use client";
 
-import { FaPlay } from "react-icons/fa";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Video from "yet-another-react-lightbox/plugins/video";
-
 import "yet-another-react-lightbox/styles.css";
 
-const VideoBanner = () => {
+export default function VideoModal({ videoId, children }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
+      {children({ open: () => setOpen(true) })}
+
       <Lightbox
         open={open}
         close={() => setOpen(false)}
@@ -21,24 +21,13 @@ const VideoBanner = () => {
             type: "video",
             sources: [
               {
-                src: "https://www.youtube.com/watch?v=X7R-q9rsrtU",
+                src: `https://www.youtube.com/watch?v=${videoId}`,
                 type: "video/youtube",
               },
             ],
           },
         ]}
       />
-
-      <div
-        className="ltn__video-bg-img bg-overlay-black-30 bg-image bg-fixed ltn__animation-pulse1"
-        style={{ backgroundImage: `url("/img/bg/19.jpg")` }}
-      >
-        <button onClick={() => setOpen(true)} className="ltn__video-icon-2">
-          <FaPlay />
-        </button>
-      </div>
     </>
   );
-};
-
-export default VideoBanner;
+}

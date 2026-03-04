@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import { useState } from "react";
 
 function AboutUsSectionTwo() {

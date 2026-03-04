@@ -17,7 +17,7 @@ import BlogItem from "@/components/blog";
 import blogData from "@/data/blog";
 import CallToAction from "@/components/callToAction";
 import Accordion from "react-bootstrap/Accordion";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import Link from "next/link";
 import CounterUp from "@/components/counterUp";
 
@@ -64,16 +64,17 @@ function Faq() {
   return (
     <>
       <LayoutOne topbar={true}>
-        <ModalVideo
-          channel="youtube"
-          autoplay
-          isOpen={isOpen}
-          videoId="LjCzPp-MK48"
-          onClose={() => setOpen(false)}
-        />
+            <VideoModal videoId="X7R-q9rsrtU">
+              {({ open }) => (
+                <button onClick={open} className="ltn__video-icon-2">
+                  <FaPlay />
+                </button>
+              )}
+            </VideoModal>
+
         <ShopBreadCrumb
           title="Frequently asked questions"
-          sectionPace=""
+          sectionPace="" 
           currentSlug="About UsFAQ"
         />
 

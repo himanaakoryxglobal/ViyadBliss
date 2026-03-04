@@ -14,7 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'lightgallery/scss/lightgallery.scss';
 import 'lightgallery/scss/lg-zoom.scss';
-import 'react-modal-video/scss/modal-video.scss';
+// import 'react-modal-video/scss/modal-video.scss';
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 import '../assets/sass/style.scss';

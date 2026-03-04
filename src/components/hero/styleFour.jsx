@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import { FaPlay, FaHome } from "react-icons/fa";
 import { Container, Col, Row } from "react-bootstrap";
 

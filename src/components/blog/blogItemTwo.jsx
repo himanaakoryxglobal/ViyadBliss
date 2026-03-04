@@ -8,7 +8,7 @@ import {
   FaRegComments,
   FaRegCalendarAlt,
 } from "react-icons/fa";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import Slider from "react-slick";
 const BlogItemTwo = ({ blogData, slug, baseUrl }) => {
   const [isOpen, setOpen] = useState(false);
@@ -36,13 +36,13 @@ const BlogItemTwo = ({ blogData, slug, baseUrl }) => {
 
   return (
     <>
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="X7R-q9rsrtU"
-        onClose={() => setOpen(false)}
-      />
+    <VideoModal videoId="X7R-q9rsrtU">
+  {({ open }) => (
+    <button onClick={open} className="ltn__video-icon-2">
+      <FaPlay />
+    </button>
+  )}
+</VideoModal>
       <div
         className={`ltn__blog-item ltn__blog-item-5 ${
           blogData.settings.video

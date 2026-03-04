@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Slider from "react-slick";
-import ModalVideo from "react-modal-video";
+import VideoModal from "../common/VideoModal";
 import {
   FaPlay,
   FaHome,
@@ -141,13 +141,13 @@ function HeroSectionStyleTwo({ data }) {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="HnbMYzdjuBs"
-        onClose={() => setOpen(false)}
-      />
+    <VideoModal videoId="X7R-q9rsrtU">
+      {({ open }) => (
+        <button onClick={open} className="ltn__video-icon-2">
+          <FaPlay />
+        </button>
+      )}
+    </VideoModal>
 
       <div className="ltn__slider-11-inner position-relative">
         <Slider

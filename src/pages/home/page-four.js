@@ -7,7 +7,7 @@ import TitleSection from "@/components/titleSection";
 import featuresData from "@/data/service";
 import HeroSectionStyleFour from "@/components/hero/styleFour";
 import { FaArrowLeft, FaArrowRight, FaPlay, FaRegComments } from "react-icons/fa";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import blogData from "@/data/blog";
 import BlogItem from "@/components/blog";
 import CallToAction from "@/components/callToAction";
@@ -190,13 +190,13 @@ function HomeVersionFour(props) {
   return (
     <LayoutThree topbar={true}>
 
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="X7R-q9rsrtU"
-        onClose={() => setOpen(false)}
-      />
+    <VideoModal videoId="X7R-q9rsrtU">
+  {({ open }) => (
+    <button onClick={open} className="ltn__video-icon-2">
+      <FaPlay />
+    </button>
+  )}
+</VideoModal>
       {/* <!-- SLIDER AREA START (slider-11) --> */}
       <HeroSectionStyleFour />
       {/* <!-- SLIDER AREA END --> */}

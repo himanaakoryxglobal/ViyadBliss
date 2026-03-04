@@ -3,19 +3,19 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { FaPlay } from "react-icons/fa";
-import ModalVideo from "react-modal-video";
+import VideoModal from "@/components/common/VideoModal";
 import { useState } from "react";
 function AboutUsStyleOne({ sectionSpace }) {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <ModalVideo
-        channel="youtube"
-        autoplay
-        isOpen={isOpen}
-        videoId="X7R-q9rsrtU"
-        onClose={() => setOpen(false)}
-      />
+    <VideoModal videoId="X7R-q9rsrtU">
+  {({ open }) => (
+    <button onClick={open} className="ltn__video-icon-2">
+      <FaPlay />
+    </button>
+  )}
+</VideoModal>
       <div className={`ltn__about-us-area ${sectionSpace}`}>
         <Container>
           <Row>
