@@ -75,7 +75,7 @@ const Contact = () => {
 
           {/* RIGHT SIDE - Contact Form */}
           <div className="col-lg-6">
-            <div className="ltn__form-box contact-form-box box-shadow white-bg small-form">
+            <div className="ltn__form-box contact-form-box white-bg small-form">
 
               <h4 className="title-2 text-center mb-4">Get A Quote</h4>
 
