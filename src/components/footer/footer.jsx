@@ -26,13 +26,12 @@ const Footer = function () {
                   <div className="footer-logo ">
                     <div className="site-logo">
                       {/* <img src="/img/logo.png" alt="Logo" /> */}
-                      <img src="/img/logo-2.jpeg" alt="Logo" className="LogoAlter mb-2" width={300} height={300}/>
+                      <img src="/img/logo-2.jpeg" alt="Logo" className="LogoAlter mb-2" width={200} height={200}/>
                     </div>
                   </div>
                   <p>
-                    Lorem Ipsum is simply dummy text of the and typesetting
-                    industry. Lorem Ipsum is dummy text of the printing.
-                  </p>
+                    A serene 57-plot gated community near Dapoli where modern living 
+                    meets the peaceful soul of Konkan                  </p>
                   <div className="footer-address">
                     <ul>
                       <li>
