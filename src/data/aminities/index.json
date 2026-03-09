@@ -1,49 +1,49 @@
 [
   {
     "id": "01",
-    "title": "Parking Space",
+    "title": "2 & 3 BHK Furnished ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-car"
   },
   {
     "id": "02",
-    "title": "Swimming Pool",
+    "title": "Semi-Furnished Bungalows",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-swimming"
   },
   {
     "id": "03",
-    "title": "Private Security",
+    "title": "Ready Infra ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-secure-shield"
   },
   {
     "id": "04",
-    "title": "Medical Center",
+    "title": "24/7 Security ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-stethoscope"
   },
   {
     "id": "05",
-    "title": "Library Area",
+    "title": "Gated Community",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-book"
   },
   {
     "id": "06",
-    "title": "King Size Beds",
+    "title": "365 Days Water & Power ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-bed-1"
   },
   {
     "id": "07",
-    "title": "Smart Homes",
+    "title": "Swimming Pool ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-home-2"
   },
   {
     "id": "08",
-    "title": "Kid’s Playland",
+    "title": "Bird View Machan",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
     "icon": "flaticon-slider"
   }

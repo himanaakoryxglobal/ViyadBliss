@@ -111,9 +111,22 @@ function HomePage({ Herodata }) {
         className="scrollbar-attached-card"
         style={{ top: `${cardTop}px` }}
       >
-        Premium Amenities
-      </div>
+        <h3>Premium Amenities</h3>
 
+        <div className="amenities-grid">
+          {amenities.map((item) => (
+            <div key={item.id} className="amenity-item">
+              
+              <div className="amenity-icon">
+                <i className={item.icon}></i>
+              </div>
+
+              <span>{item.title}</span>
+
+            </div>
+          ))}
+        </div>
+      </div>
       {/* ===== HERO ===== */}
       <HeroSectionStyleFive data={Herodata} />
 
@@ -177,11 +190,11 @@ function HomePage({ Herodata }) {
             </Col>
           </Row>
 
-          <Row className="mb-5">
+          {/* <Row className="mb-5">
             <Col xs={12}>
               <FeaturedAmenity />
             </Col>
-          </Row>
+          </Row> */}
 
           <Row className="justify-content-center">
             {aminitiesData.map((data, key) => (
