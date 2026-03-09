@@ -14,7 +14,6 @@ import ZigZagSection from "@/components/zigzag/ZigZagSection";
 import VideoBanner from "@/components/banner/videoBanner";
 import TitleSection from "@/components/titleSection";
 import AminitiesItem from "@/components/aminities/item";
-import FeaturedAmenity from "@/components/aminities/FeaturedAmenity";
 import TestimonialCarouselItem from "@/components/testimonialCarousel";
 import BlogItem from "@/components/blog";
 import SocialImpactSection from "@/components/SocialImpact/SocialImpactSection";
@@ -28,39 +27,58 @@ import featuresData from "@/data/service";
 import { getProducts, productSlug } from "@/lib/product";
 
 function HomePage({ Herodata }) {
+
   const { products } = useSelector((state) => state.product);
   const featureData = getProducts(featuresData, "buying", "featured", 3);
-  const [visibleAmenities, setVisibleAmenities] = useState(1);
+
   /* =========================
-     SCROLLBAR SYNC LOGIC
+     SCROLL STATES
   ========================= */
 
   const [scrollPercent, setScrollPercent] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(0);
+  const [currentAmenity, setCurrentAmenity] = useState(0);
+
+  /* =========================
+     SCROLL LOGIC
+  ========================= */
 
   useEffect(() => {
+
     if (typeof window !== "undefined") {
+
       setViewportHeight(window.innerHeight);
 
       const handleScroll = () => {
+
         const scrollTop = window.scrollY;
+
         const docHeight =
           document.documentElement.scrollHeight -
           document.documentElement.clientHeight;
 
         const percent = scrollTop / docHeight;
+
         setScrollPercent(percent);
+
+        const index = Math.floor(percent * aminitiesData.length);
+
+        setCurrentAmenity(index);
+
       };
 
       window.addEventListener("scroll", handleScroll);
+
       return () => window.removeEventListener("scroll", handleScroll);
+
     }
+
   }, []);
 
   const cardTop = 150 + scrollPercent * (viewportHeight - 300);
 
   /* =========================
-     Slick Arrows
+     SLICK ARROWS
   ========================= */
 
   const SlickArrowLeft = (props) => (
@@ -104,35 +122,48 @@ function HomePage({ Herodata }) {
   };
 
   return (
+
     <LayoutFive topbar={true}>
 
-      {/* ===== Scrollbar Synced Card ===== */}
+      {/* ===== Scroll Synced Amenities Card ===== */}
+
       <div
-  className="scrollbar-attached-card"
-  style={{ top: `${cardTop}px` }}
->
-  <h3 className="text-white">Premium Amenities</h3>
+        className="scrollbar-attached-card"
+        style={{ top: `${cardTop}px` }}
+      >
 
-  <div className="amenities-grid">
-    {aminitiesData.slice(0, visibleAmenities).map((item) => (
-      <div key={item.id} className="amenity-item">
-        <div className="amenity-icon">
-          <i className={item.icon}></i>
-        </div>
+        <h3 className="text-white">Premium Amenities</h3>
 
-        <span className="text-light">{item.title}</span>
+        {aminitiesData[currentAmenity] && (
+
+          <div className="amenity-item">
+
+            <div className="amenity-icon">
+              <i className={aminitiesData[currentAmenity].icon}></i>
+            </div>
+
+            <span className="text-light">
+              {aminitiesData[currentAmenity].title}
+            </span>
+
+          </div>
+
+        )}
+
       </div>
-    ))}
-  </div>
-</div>
+
       {/* ===== HERO ===== */}
+
       <HeroSectionStyleFive data={Herodata} />
 
       {/* ===== ABOUT ===== */}
+
       <AboutUsStyleOne sectionSpace="pt-120 pb-90" />
+
       <SingleImageCard />
 
       {/* ===== SERVICES ===== */}
+
       <Feature
         classes="section-bg-1"
         servicebtn={true}
@@ -146,7 +177,8 @@ function HomePage({ Herodata }) {
         }}
       />
 
-      {/* ===== ZIGZAG ===== */}
+      {/* ===== ZIGZAG SECTIONS ===== */}
+
       <ZigZagSection
         image="/img/bg/bunglow1.png"
         title="Luxury Hill View Bungalow"
@@ -167,16 +199,23 @@ function HomePage({ Herodata }) {
       />
 
       {/* ===== VIDEO ===== */}
+
       <VideoBanner />
 
       {/* ===== SOCIAL IMPACT ===== */}
+
       <SocialImpactSection />
 
-      {/* ===== AMENITIES ===== */}
+      {/* ===== AMENITIES GRID ===== */}
+
       <section className="ltn__category-area ltn__product-gutter pt-115 pb-90">
+
         <Container>
+
           <Row>
+
             <Col xs={12}>
+
               <TitleSection
                 sectionClasses="text-center"
                 headingClasses="section-subtitle-2"
@@ -185,68 +224,95 @@ function HomePage({ Herodata }) {
                   title: "Building Amenities",
                 }}
               />
-            </Col>
-          </Row>
 
-          {/* <Row className="mb-5">
-            <Col xs={12}>
-              <FeaturedAmenity />
             </Col>
-          </Row> */}
+
+          </Row>
 
           <Row className="justify-content-center">
+
             {aminitiesData.map((data, key) => (
+
               <Col key={key} xs={12} sm={6} md={4} lg={3}>
+
                 <AminitiesItem data={data} />
+
               </Col>
+
             ))}
+
           </Row>
+
         </Container>
+
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
+
       <section
         className="ltn__testimonial-area bg-image-top pt-115 pb-70"
         style={{ backgroundImage: `url("../img/bg/20.jpg")` }}
       >
+
         <Container>
+
           <Slider {...testimonialSettings}>
+
             {testimonialData.map((data, key) => (
+
               <TestimonialCarouselItem key={key} data={data} />
+
             ))}
+
           </Slider>
+
         </Container>
+
       </section>
 
       {/* ===== BLOG ===== */}
+
       <section className="ltn__blog-area pb-70">
+
         <Container>
+
           <Slider {...blogSettings}>
+
             {blogData.map((data, key) => (
+
               <BlogItem
                 key={key}
                 baseUrl="blog"
                 data={data}
                 slug={productSlug(data.title)}
               />
+
             ))}
+
           </Slider>
+
         </Container>
+
       </section>
 
     </LayoutFive>
+
   );
+
 }
 
 /* ================= STATIC PROPS ================= */
 
 export async function getStaticProps() {
+
   const filePath = path.join(process.cwd(), "src/data/hero/", "index.json");
+
   const Herodata = JSON.parse(await fs.readFile(filePath));
 
   return {
     props: { Herodata },
   };
+
 }
 
-export default HomePage;  
+export default HomePage;
