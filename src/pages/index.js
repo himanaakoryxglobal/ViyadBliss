@@ -120,7 +120,7 @@ function HomePage({ Herodata }) {
           <i className={item.icon}></i>
         </div>
 
-        <span>{item.title}</span>
+        <span className="text-light">{item.title}</span>
       </div>
     ))}
   </div>
