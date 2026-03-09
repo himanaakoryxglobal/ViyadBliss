@@ -111,7 +111,7 @@ function HomePage({ Herodata }) {
   className="scrollbar-attached-card"
   style={{ top: `${cardTop}px` }}
 >
-  <h3>Premium Amenities</h3>
+  <h3 className="text-white">Premium Amenities</h3>
 
   <div className="amenities-grid">
     {aminitiesData.slice(0, visibleAmenities).map((item) => (
