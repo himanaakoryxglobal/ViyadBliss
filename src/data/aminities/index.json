@@ -9,25 +9,25 @@
     "id": "02",
     "title": "Semi-Furnished Bungalows",
     "description": "Enimad minim veniam quis dno exercitation ullamco lab",
-    "icon": "flaticon-Bunglow"
+    "icon": "flaticon-Bunglows"
   },
   {
     "id": "03",
     "title": "Ready Infra ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
-    "icon": "flaticon-secure-shield"
+    "icon": "flaticon-house"
   },
   {
     "id": "04",
     "title": "24/7 Security ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
-    "icon": "flaticon-stethoscope"
+    "icon": "flaticon-secure-shield"
   },
   {
     "id": "05",
     "title": "Gated Community",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
-    "icon": "flaticon-book"
+    "icon": "flaticon-gate"
   },
   {
     "id": "06",
@@ -39,12 +39,12 @@
     "id": "07",
     "title": "Swimming Pool ",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
-    "icon": "flaticon-home-2"
+    "icon": "flaticon-swimmingpool"
   },
   {
     "id": "08",
     "title": "Bird View Machan",
     "description": "Enimad minim veniam quis no exercitation ullamco lab",
-    "icon": "flaticon-slider"
+    "icon": "flaticon-birds"
   }
 ]
