@@ -4,7 +4,7 @@ const MenuList = ({ addListing }) => {
   return (
     <ul>
       <li className="menu-icon">
-        <Link href="/home/page-five">
+        <Link href="/">
           Home 
         </Link>
         {/* <ul className="sub-menu menu-pages-img-show">
