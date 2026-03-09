@@ -13,6 +13,23 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: "flaticon";
+  src: url("/fonts/flaticon.ttf") format("truetype"),
+       url("/fonts/flaticon.woff") format("woff"),
+       url("/fonts/flaticon.woff2") format("woff2"),
+       url("/fonts/flaticon.eot") format("embedded-opentype"),
+       url("/fonts/flaticon.svg") format("svg");
+}
+
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  font-family: "flaticon" !important;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
 .flaticon-add-to-cart:before {
   content: "\f101";
 }

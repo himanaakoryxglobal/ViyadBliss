@@ -19,7 +19,6 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/counter.css";
 import '../assets/sass/style.scss';
 import '../assets/responsive.css';
-<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'></link>
 
 const MyApp = ({ Component, ...rest }) => {
   const { store, props } = wrapper.useWrappedStore(rest);
@@ -30,8 +29,8 @@ const MyApp = ({ Component, ...rest }) => {
   return (
     <Fragment>
       <Head>
-        <title>Quarter - Real Estate NextJs Template</title>
-        <meta name="description" content="Quarter - Real Estate Nextjs Template" />
+        <title>Viyad Bliss</title>
+        <meta name="description" content="Viyad Bliss" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
