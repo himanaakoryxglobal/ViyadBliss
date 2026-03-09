@@ -30,7 +30,7 @@ import { getProducts, productSlug } from "@/lib/product";
 function HomePage({ Herodata }) {
   const { products } = useSelector((state) => state.product);
   const featureData = getProducts(featuresData, "buying", "featured", 3);
-
+  const [visibleAmenities, setVisibleAmenities] = useState(1);
   /* =========================
      SCROLLBAR SYNC LOGIC
   ========================= */
@@ -108,25 +108,23 @@ function HomePage({ Herodata }) {
 
       {/* ===== Scrollbar Synced Card ===== */}
       <div
-        className="scrollbar-attached-card"
-        style={{ top: `${cardTop}px` }}
-      >
-        <h3>Premium Amenities</h3>
+  className="scrollbar-attached-card"
+  style={{ top: `${cardTop}px` }}
+>
+  <h3>Premium Amenities</h3>
 
-        <div className="amenities-grid">
-          {amenities.map((item) => (
-            <div key={item.id} className="amenity-item">
-              
-              <div className="amenity-icon">
-                <i className={item.icon}></i>
-              </div>
-
-              <span>{item.title}</span>
-
-            </div>
-          ))}
+  <div className="amenities-grid">
+    {aminitiesData.slice(0, visibleAmenities).map((item) => (
+      <div key={item.id} className="amenity-item">
+        <div className="amenity-icon">
+          <i className={item.icon}></i>
         </div>
+
+        <span>{item.title}</span>
       </div>
+    ))}
+  </div>
+</div>
       {/* ===== HERO ===== */}
       <HeroSectionStyleFive data={Herodata} />
 
