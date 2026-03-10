@@ -16,7 +16,7 @@ import { FaArrowLeft, FaArrowRight, FaPlay } from "react-icons/fa";
 import Link from "next/link";
 import VideoModal from "@/components/common/VideoModal";
 import AminitiesItemTwo from "@/components/aminities/itemTwo";
-import aminitiesData from "@/data/aminities/index.json";
+import aminitiesData from "@/data/aminities/index.js";
 import TestimonialCarouselItemTwo from "@/components/testimonialCarousel/indexTwo";
 import testimonialData from "@/data/testimonial";
 import blogData from "@/data/blog";
