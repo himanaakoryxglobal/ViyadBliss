@@ -221,23 +221,6 @@ function HomePage({ Herodata }) {
 
 
 
-      {/* =========================
-         KONKAN START PACK
-      ========================= */}
-
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-
-        <motion.div variants={itemAnimation}>
-          <KonkanStartPack />
-        </motion.div>
-
-      </motion.div>
-
 
 
       {/* =========================
@@ -259,24 +242,7 @@ function HomePage({ Herodata }) {
 
 
 
-      {/* =========================
-         COMMITMENT SECTION
-      ========================= */}
-
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-
-        <motion.div variants={itemAnimation}>
-          <CommitmentSection />
-        </motion.div>
-
-      </motion.div>
-
-
+   
 
       {/* =========================
          OFFER SLIDER
@@ -328,6 +294,26 @@ function HomePage({ Herodata }) {
       </motion.div>
 
 
+   {/* =========================
+         COMMITMENT SECTION
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <CommitmentSection />
+        </motion.div>
+
+      </motion.div>
+
+
+
+
 
       {/* =========================
          ZIGZAG SECTIONS
@@ -352,6 +338,24 @@ function HomePage({ Herodata }) {
         description="Modern conference facilities for corporate retreats."
       />
 
+             {/* =========================
+         KONKAN START PACK
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <KonkanStartPack />
+        </motion.div>
+
+      </motion.div>
+
+ 
 
 
       {/* =========================
