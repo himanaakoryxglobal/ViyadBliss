@@ -385,6 +385,11 @@ function HomePage({ Herodata }) {
 
         <Container>
 
+                  {/* Section Title */}
+        <div className="section-title text-center mb-5">
+          <h1 className="text-Dark">Our Testimonial</h1>
+        </div>
+
           <Slider {...testimonialSettings}>
 
             {testimonialData.map((data, key) => (
@@ -405,29 +410,32 @@ function HomePage({ Herodata }) {
          BLOG
       ========================= */}
 
-      <section className="ltn__blog-area pb-70">
+<section className="ltn__blog-area bg-dark py-5">
 
-        <Container>
+  <Container>
 
-          <Slider {...blogSettings}>
+    {/* Section Title */}
+    <div className="section-title text-center mb-5">
+      <h1 className="text-white">Our Blog</h1>
+    </div>
 
-            {blogData.map((data, key) => (
+    {/* Blog Slider */}
+    <Slider {...blogSettings} className="blog-slider">
 
-              <BlogItem
-                key={key}
-                baseUrl="blog"
-                data={data}
-                slug={productSlug(data.title)}
-              />
+      {blogData.map((data, key) => (
+        <BlogItem
+          key={key}
+          baseUrl="blog"
+          data={data}
+          slug={productSlug(data.title)}
+        />
+      ))}
 
-            ))}
+    </Slider>
 
-          </Slider>
+  </Container>
 
-        </Container>
-
-      </section>
-
+</section>
     </LayoutFive>
 
   );
