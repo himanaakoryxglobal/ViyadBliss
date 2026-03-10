@@ -11,7 +11,7 @@ import ProductItem from "@/components/product";
 import RelatedProduct from "@/components/product/related-product";
 import CallToAction from "@/components/callToAction";
 import VideoBanner from "@/components/banner/videoBanner";
-import aminitiesData from "@/data/aminities/index.json";
+import aminitiesData from "@/data/aminities/index.js";
 import AminitiesItem from "@/components/aminities/item";
 import TestimonialCarouselItem from "@/components/testimonialCarousel";
 import testimonialData from "@/data/testimonial";
