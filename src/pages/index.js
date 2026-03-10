@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import { LayoutFive } from "@/layouts";
 import HeroSectionStyleFive from "@/components/hero/styleFive";
@@ -18,30 +19,59 @@ import TestimonialCarouselItem from "@/components/testimonialCarousel";
 import BlogItem from "@/components/blog";
 import SocialImpactSection from "@/components/SocialImpact/SocialImpactSection";
 import SingleImageCard from "@/components/storycard/SingleImageCard";
+import KonkanStartPack from "@/components/kokanpacks/KonkanStartPack";
+import ImageSlider from "@/components/Offerslider/ImageSlider";
+import CommitmentSection from "@/components/CommitmentSection/CommitmentSection";
 
-import aminitiesData from "@/data/aminities/index.json";
+import aminitiesData from "@/data/aminities/index.js";
 import testimonialData from "@/data/testimonial";
 import blogData from "@/data/blog";
 import featuresData from "@/data/service";
 
 import { getProducts, productSlug } from "@/lib/product";
+import AmenitiesSection from "@/components/aminities/AminitiresSection";
+import { HeaderPremium } from "@/components/header";
+
+
+/* =========================
+   GLOBAL ANIMATION SYSTEM
+========================= */
+
+const containerAnimation = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const itemAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+
 
 function HomePage({ Herodata }) {
 
   const { products } = useSelector((state) => state.product);
   const featureData = getProducts(featuresData, "buying", "featured", 3);
 
-  /* =========================
-     SCROLL STATES
-  ========================= */
-
   const [scrollPercent, setScrollPercent] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(0);
   const [currentAmenity, setCurrentAmenity] = useState(0);
-
-  /* =========================
-     SCROLL LOGIC
-  ========================= */
 
   useEffect(() => {
 
@@ -76,6 +106,7 @@ function HomePage({ Herodata }) {
   }, []);
 
   const cardTop = 150 + scrollPercent * (viewportHeight - 300);
+
 
   /* =========================
      SLICK ARROWS
@@ -121,22 +152,33 @@ function HomePage({ Herodata }) {
     ],
   };
 
+
   return (
 
     <LayoutFive topbar={true}>
 
-      {/* ===== Scroll Synced Amenities Card ===== */}
+      {/* =========================
+         FLOATING AMENITY CARD
+      ========================= */}
 
-      <div
+      <motion.div
         className="scrollbar-attached-card"
         style={{ top: `${cardTop}px` }}
+        initial={{ opacity: 0, scale: 0.7 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
       >
 
-        <h3 className="text-white">Premium Amenities</h3>
+        <motion.h3 variants={itemAnimation} className="text-white">
+          Premium Amenities
+        </motion.h3>
 
         {aminitiesData[currentAmenity] && (
 
-          <div className="amenity-item">
+          <motion.div
+            className="amenity-item"
+            variants={itemAnimation}
+          >
 
             <div className="amenity-icon">
               <i className={aminitiesData[currentAmenity].icon}></i>
@@ -146,38 +188,150 @@ function HomePage({ Herodata }) {
               {aminitiesData[currentAmenity].title}
             </span>
 
-          </div>
+          </motion.div>
 
         )}
 
-      </div>
+      </motion.div>
 
-      {/* ===== HERO ===== */}
+
+      {/* =========================
+         HERO
+      ========================= */}
 
       <HeroSectionStyleFive data={Herodata} />
+      {/* <HeaderPremium/> */}
 
-      {/* ===== ABOUT ===== */}
+      {/* =========================
+         ABOUT SECTION
+      ========================= */}
 
-      <AboutUsStyleOne sectionSpace="pt-120 pb-90" />
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
 
-      <SingleImageCard />
+        <motion.div variants={itemAnimation}>
+          <AboutUsStyleOne sectionSpace="pt-120 pb-90" />
+        </motion.div>
 
-      {/* ===== SERVICES ===== */}
+      </motion.div>
 
-      <Feature
-        classes="section-bg-1"
-        servicebtn={true}
-        iconTag={false}
-        data={featureData}
-        headingClasses="section-subtitle-2"
-        titleSectionData={{
-          sectionClasses: "text-center",
-          subTitle: "Our Services",
-          title: "Our Main Focus",
-        }}
-      />
 
-      {/* ===== ZIGZAG SECTIONS ===== */}
+
+      {/* =========================
+         KONKAN START PACK
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <KonkanStartPack />
+        </motion.div>
+
+      </motion.div>
+
+
+
+      {/* =========================
+         STORY CARD
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <SingleImageCard />
+        </motion.div>
+
+      </motion.div>
+
+
+
+      {/* =========================
+         COMMITMENT SECTION
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <CommitmentSection />
+        </motion.div>
+
+      </motion.div>
+
+
+
+      {/* =========================
+         OFFER SLIDER
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <ImageSlider />
+        </motion.div>
+
+      </motion.div>
+
+
+
+      {/* =========================
+         SERVICES
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+
+          <Feature
+            classes="section-bg-1"
+            servicebtn={true}
+            iconTag={false}
+            data={featureData}
+            headingClasses="section-subtitle-2"
+            titleSectionData={{
+              sectionClasses: "text-center",
+              subTitle: "Our Services",
+              title: "Our Main Focus",
+            }}
+          />
+
+        </motion.div>
+
+      </motion.div>
+
+
+
+      {/* =========================
+         ZIGZAG SECTIONS
+      ========================= */}
 
       <ZigZagSection
         image="/img/bg/bunglow1.png"
@@ -198,56 +352,31 @@ function HomePage({ Herodata }) {
         description="Modern conference facilities for corporate retreats."
       />
 
-      {/* ===== VIDEO ===== */}
+
+
+      {/* =========================
+         VIDEO SECTION
+      ========================= */}
 
       <VideoBanner />
 
-      {/* ===== SOCIAL IMPACT ===== */}
+
+      {/* =========================
+         SOCIAL IMPACT
+      ========================= */}
 
       <SocialImpactSection />
 
-      {/* ===== AMENITIES GRID ===== */}
 
-      <section className="ltn__category-area ltn__product-gutter pt-115 pb-90">
+      {/* =========================
+         AMENITIES GRID
+      ========================= */}
 
-        <Container>
+          <AmenitiesSection/>
 
-          <Row>
-
-            <Col xs={12}>
-
-              <TitleSection
-                sectionClasses="text-center"
-                headingClasses="section-subtitle-2"
-                titleSectionData={{
-                  subTitle: "Our Amenities",
-                  title: "Building Amenities",
-                }}
-              />
-
-            </Col>
-
-          </Row>
-
-          <Row className="justify-content-center">
-
-            {aminitiesData.map((data, key) => (
-
-              <Col key={key} xs={12} sm={6} md={4} lg={3}>
-
-                <AminitiesItem data={data} />
-
-              </Col>
-
-            ))}
-
-          </Row>
-
-        </Container>
-
-      </section>
-
-      {/* ===== TESTIMONIALS ===== */}
+      {/* =========================
+         TESTIMONIAL
+      ========================= */}
 
       <section
         className="ltn__testimonial-area bg-image-top pt-115 pb-70"
@@ -270,7 +399,11 @@ function HomePage({ Herodata }) {
 
       </section>
 
-      {/* ===== BLOG ===== */}
+
+
+      {/* =========================
+         BLOG
+      ========================= */}
 
       <section className="ltn__blog-area pb-70">
 
@@ -301,7 +434,11 @@ function HomePage({ Herodata }) {
 
 }
 
-/* ================= STATIC PROPS ================= */
+
+
+/* =========================
+   STATIC PROPS
+========================= */
 
 export async function getStaticProps() {
 

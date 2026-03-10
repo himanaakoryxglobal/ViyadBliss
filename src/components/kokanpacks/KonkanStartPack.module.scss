@@ -1,0 +1,77 @@
+.section {
+  padding: 120px 20px;
+  background: #f8f7f4;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+
+.header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f2c2c;
+  margin-bottom: 20px;
+}
+
+.title span {
+  color: #c08a44;
+}
+
+.subtitle {
+  max-width: 720px;
+  margin: auto;
+  line-height: 1.7;
+  font-size: 17px;
+  color: #6b7280;
+}
+
+/* Cards Grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+
+.card {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+}
+
+.icon {
+  font-size: 34px;
+  color: #c08a44;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.card p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}

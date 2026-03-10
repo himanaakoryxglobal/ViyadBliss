@@ -5,5 +5,5 @@ import HeaderFour from "./HeaderFour";
 import HeaderFive from "./HeaderFive";
 import HeaderTransparent from "./headerTransparent";
 import HeaderTransparentTwo from "./headerTransparentTwo";
-
-export { HeaderOne, HeaderTwo, HeaderThree, HeaderFour, HeaderFive, HeaderTransparent, HeaderTransparentTwo };
+import HeaderPremium from "./HeaderPremium";
+export { HeaderOne, HeaderTwo, HeaderThree, HeaderFour, HeaderFive, HeaderTransparent, HeaderTransparentTwo,HeaderPremium };

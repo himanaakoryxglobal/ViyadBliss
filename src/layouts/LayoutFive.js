@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { HeaderFive, HeaderOne, HeaderTransparentTwo } from "@/components/header";
+import { HeaderFive, HeaderOne, HeaderPremium, HeaderTransparentTwo } from "@/components/header";
 import Footer from "@/components/footer/footer";
 import ScrollToTop from "@/components/scroll-to-top";
 import { ToastContainer } from "react-toastify";
@@ -59,7 +59,7 @@ const LayoutFive = ({ children, navPositionClass, topbar }) => {
           navPositionClass={navPositionClass}
           topbar={topbar}
         /> */} 
-        <HeaderOne/>
+        <HeaderPremium/>
         {children}
         <Footer />
         <ScrollToTop />
