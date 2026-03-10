@@ -5,6 +5,9 @@ import ScrollToTop from "@/components/scroll-to-top";
 import { ToastContainer } from "react-toastify";
 import { Nunito_Sans,Poppins } from "next/font/google";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import HeroVideo from "@/components/hero/HeroVideo";
 
 export const nunito = Nunito_Sans({
   weight: ["200", "300", "400", "600", "700", "800", "900"],
@@ -59,8 +62,9 @@ const LayoutFive = ({ children, navPositionClass, topbar }) => {
           navPositionClass={navPositionClass}
           topbar={topbar}
         /> */} 
-        {/* <HeaderOne/>   */}
-        <HeaderPremium/>
+        <HeaderPremium/>  
+        {/* <HeroVideo/> */}
+
         {children}
         <Footer />
         <ScrollToTop />

@@ -31,6 +31,11 @@ import featuresData from "@/data/service";
 import { getProducts, productSlug } from "@/lib/product";
 import AmenitiesSection from "@/components/aminities/AminitiresSection";
 import { HeaderPremium } from "@/components/header";
+import HeroSlider from "@/components/hero/herosilder";
+import HeroVideo from "@/components/hero/HeroVideo";
+import ViyadOfferings from "@/components/offerings/ViyadOfferings";
+import BuiltForGenerations from "@/components/BuiltForGenerations/BuiltForGenerations";
+import BillboardScene from "@/components/Billboard/Bllboard";
 
 
 /* =========================
@@ -155,7 +160,7 @@ function HomePage({ Herodata }) {
 
   return (
 
-    <LayoutFive topbar={true}>
+    <LayoutFive topbar={false}>
 
       {/* =========================
          FLOATING AMENITY CARD
@@ -200,7 +205,10 @@ function HomePage({ Herodata }) {
       ========================= */}
 
       <HeroSectionStyleFive data={Herodata} />
+      {/* <HeroVideo/> */}
+      {/* <HeroSlider/>   */}
       {/* <HeaderPremium/> */}
+
 
       {/* =========================
          ABOUT SECTION
@@ -220,50 +228,9 @@ function HomePage({ Herodata }) {
       </motion.div>
 
 
+      <ViyadOfferings/>
 
-
-
-      {/* =========================
-         STORY CARD
-      ========================= */}
-
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-
-        <motion.div variants={itemAnimation}>
-          <SingleImageCard />
-        </motion.div>
-
-      </motion.div>
-
-
-
-   
-
-      {/* =========================
-         OFFER SLIDER
-      ========================= */}
-
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-
-        <motion.div variants={itemAnimation}>
-          <ImageSlider />
-        </motion.div>
-
-      </motion.div>
-
-
-
-      {/* =========================
+   {/* =========================
          SERVICES
       ========================= */}
 
@@ -291,10 +258,55 @@ function HomePage({ Herodata }) {
 
         </motion.div>
 
+      </motion.div>  
+
+
+      {/* =========================
+         VIDEO SECTION
+      ========================= */}
+
+      <VideoBanner />
+
+     {/* =========================
+         KONKAN START PACK
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <KonkanStartPack />
+        </motion.div>
+
       </motion.div>
 
 
-   {/* =========================
+      <BillboardScene/>
+
+ {/* =========================
+         STORY CARD
+      ========================= */}
+
+      {/* <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <SingleImageCard />
+        </motion.div>
+
+      </motion.div>
+ */}
+
+
+{/* =========================
          COMMITMENT SECTION
       ========================= */}
 
@@ -310,7 +322,38 @@ function HomePage({ Herodata }) {
         </motion.div>
 
       </motion.div>
+  
 
+
+
+
+
+   
+
+      {/* =========================
+         OFFER SLIDER
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <ImageSlider />
+        </motion.div>
+
+      </motion.div>
+
+
+
+
+
+
+   
+ 
 
 
 
@@ -338,31 +381,23 @@ function HomePage({ Herodata }) {
         description="Modern conference facilities for corporate retreats."
       />
 
-             {/* =========================
-         KONKAN START PACK
-      ========================= */}
 
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
 
-        <motion.div variants={itemAnimation}>
-          <KonkanStartPack />
-        </motion.div>
+  
 
-      </motion.div>
-
- 
 
 
       {/* =========================
-         VIDEO SECTION
+         AMENITIES GRID
       ========================= */}
 
-      <VideoBanner />
+          <AmenitiesSection/>
+
+
+
+
+        
+         <BuiltForGenerations/>
 
 
       {/* =========================
@@ -372,11 +407,6 @@ function HomePage({ Herodata }) {
       <SocialImpactSection />
 
 
-      {/* =========================
-         AMENITIES GRID
-      ========================= */}
-
-          <AmenitiesSection/>
 
       {/* =========================
          TESTIMONIAL

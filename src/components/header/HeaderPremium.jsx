@@ -13,11 +13,11 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="nav-menu">
+        <nav className="nav-menu fw-bold ">
           <Link href="#">Home</Link>
-          <Link href="#">About</Link>
-          <Link href="#">Services</Link>
-          <Link href="#">Contact</Link>
+          <Link href="/about">About</Link>
+          <Link href="/Services">Services</Link>
+          <Link href="/Contact">Contact</Link>
         </nav>
 
         {/* Icons */}

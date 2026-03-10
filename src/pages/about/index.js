@@ -15,6 +15,7 @@ import Feature from "@/components/features";
 import featureData from "@/data/service"
 import TeamItem from "@/components/team";
 import TeamData from '@/data/team';
+import SocialImpactSection from "@/components/SocialImpact/SocialImpactSection";
 
 function AboutUs() {
   const agents = getProducts(TeamData, "buying", "featured", 3);
@@ -78,10 +79,12 @@ function AboutUs() {
           currentSlug="About Us"
         />
 
+
+
         <AboutUsStyleOne sectionSpace="pb-90" />
 
         <Feature
-          classes="section-bg-1"
+          classes="section-bg-1  text-light"
           servicebtn={true}
           iconTag={false}
           data={featureDataSorted}
@@ -93,9 +96,9 @@ function AboutUs() {
         />
 
 
+        <SocialImpactSection className="bg-light"/>
 
-
-        <div className="ltn__team-area pt-115 pb-90">
+        {/* <div className="ltn__team-area pt-115 pb-90">
           <Container>
             <Row>
               <Col lg={12}>
@@ -123,7 +126,7 @@ function AboutUs() {
 
 
           </Container>
-        </div>
+        </div> */}
 
 
 

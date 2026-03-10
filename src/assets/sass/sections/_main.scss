@@ -314,11 +314,145 @@
 //   display: block;
 // }
 
+.scene{
+position:relative;
+width:100%;
+height:900px;
+background:#e6e6e6;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* billboard */
+
+.billboard{
+position:relative;
+width:510px;
+height:500px;
+}
+
+/* ad screen */
+
+.ad-area{
+position:absolute;
+top:80px;
+left:83px;
+width:66%;
+height:190px;
+overflow:hidden;
+}
+
+/* road */
+
+.road{
+position:absolute;
+bottom:0;
+width:100%;
+height:120px;
+background:#2f2f2f;
+}
+
+/* road lines */
+
+.road-lines{
+position:absolute;
+top:50%;
+width:100%;
+height:6px;
+background:repeating-linear-gradient(
+to right,
+white 0px,
+white 40px,
+transparent 40px,
+transparent 80px
+);
+}
+
+/* cars */
+
+.car{
+position:absolute;
+bottom:40px;
+width:120px;
+
+animation:carMove 8s linear infinite;
+}
+
+@keyframes carMove{
+
+0%{
+left:-30%;
+transform:translateX(-50%);
+}
+
+100%{
+left:110%;
+}
+
+}
+
+.car1{
+bottom:40px;
+width:320px;
+}
+
+.car2{
+bottom:10px;
+width:480px;
+}
+
+
+.billboard-scene{
+display:flex;
+justify-content:center;
+align-items:center;
+height:600px;
+background:#dedede;
+}
+
+/* billboard container */
+
+.billboard-container{
+position:relative;
+width:900px;
+}
+
+/* billboard frame */
+
+.billboard-frame{
+width:100%;
+display:block;
+}
+
+.billboard-ad{
+position:absolute;
+
+/* adjust these values to match screen */
+top:70px;
+left:85px;
+
+width:230px;
+height:330px;
+
+overflow:hidden;
+border-radius:4px;
+}
+
+/* ad image */
+
+.ad-image{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 .viyad-header{
 width:100%;
 display:flex;
 justify-content:center;
-padding:20px 0;
+padding:0 0;
 background:transparent;
 }
 
@@ -338,7 +472,7 @@ border-bottom:3px solid #ffb347;
 /* Logo */
 
 .logo img{
-height:150px;
+height:200px;
 }
 
 /* Menu */
