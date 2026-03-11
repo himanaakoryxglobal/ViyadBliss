@@ -255,9 +255,27 @@ function HomePage({ Herodata }) {
 
       <VideoBanner />
 
+{/* =========================
+         COMMITMENT SECTION
+      ========================= */}
+
+      <motion.div
+        variants={containerAnimation}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+
+        <motion.div variants={itemAnimation}>
+          <CommitmentSection />
+        </motion.div>
+
+      </motion.div>
 
 
       <BillboardScene/>
+
+
 
  {/* =========================
          STORY CARD
@@ -278,22 +296,7 @@ function HomePage({ Herodata }) {
  */}
 
 
-{/* =========================
-         COMMITMENT SECTION
-      ========================= */}
 
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-
-        <motion.div variants={itemAnimation}>
-          <CommitmentSection />
-        </motion.div>
-
-      </motion.div>
   
 
 
