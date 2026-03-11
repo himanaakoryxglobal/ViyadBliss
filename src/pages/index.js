@@ -404,8 +404,8 @@ function HomePage({ Herodata }) {
          SOCIAL IMPACT
       ========================= */}
 
-      <SocialImpactSection />
-
+      {/* <SocialImpactSection />
+ */}
 
 
       {/* =========================
