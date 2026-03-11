@@ -230,43 +230,6 @@ function HomePage({ Herodata }) {
 
       <ViyadOfferings/>
 
-   {/* =========================
-         SERVICES
-      ========================= */}
-
-      <motion.div
-        variants={containerAnimation}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-
-        <motion.div variants={itemAnimation}>
-
-          <Feature
-            classes="section-bg-1"
-            servicebtn={true}
-            iconTag={false}
-            data={featureData}
-            headingClasses="section-subtitle-2"
-            titleSectionData={{
-              sectionClasses: "text-center",
-              subTitle: "Our Services",
-              title: "Our Main Focus",
-            }}
-          />
-
-        </motion.div>
-
-      </motion.div>  
-
-
-      {/* =========================
-         VIDEO SECTION
-      ========================= */}
-
-      <VideoBanner />
-
      {/* =========================
          KONKAN START PACK
       ========================= */}
@@ -283,6 +246,15 @@ function HomePage({ Herodata }) {
         </motion.div>
 
       </motion.div>
+
+
+
+      {/* =========================
+         VIDEO SECTION
+      ========================= */}
+
+      <VideoBanner />
+
 
 
       <BillboardScene/>
