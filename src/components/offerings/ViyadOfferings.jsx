@@ -10,16 +10,16 @@ const offerings = [
     highlight:
       "Comes with an extra-large garden space on your 3,000+ sq. ft. plot — perfect for a private herb garden or nature sanctuary.",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600",
+      "/img/Bhk/WhatsApp Image 2026-03-11 at 19.33.00 (2).jpeg",
   },
   {
     id: 2,
-    title: "2BHK Private Bungalow with Veranda",
+   title: "2BHK Private Bungalow with Veranda",
     desc: "Experience the authentic Konkan lifestyle with open spaces designed for relaxed afternoons, family gatherings, and slow living.",
     highlight:
       "Features a classic wide Konkan-style veranda — the perfect spot for morning tea while enjoying misty hills or monsoon rain.",
     image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1600",
+      "/img/Bhk/WhatsApp Image 2026-03-11 at 19.33.00.jpeg",
   },
   {
     id: 3,
