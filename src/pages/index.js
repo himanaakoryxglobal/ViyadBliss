@@ -323,16 +323,6 @@ function HomePage({ Herodata }) {
       </motion.div>
 
 
-
-
-
-
-   
- 
-
-
-
-
       {/* =========================
          ZIGZAG SECTIONS
       ========================= */}
