@@ -11,14 +11,12 @@ export default function BuiltForGenerations() {
         <h2 className="title">BUILT FOR GENERATIONS</h2>
 
         <p className="description">
-          Spread across 14 acres near Kolthare Beach, Dapoli, Varsa is an
-          upcoming 4-star gated community villa resort. It offers sea-view
-          plots and villas designed in the timeless wada style. Built with
-          authentic Kaula tiles and climate-responsive architecture, Varsa
-          respects the natural landscape while providing modern comfort.
-          Developed by local craftsmen who know this land best, it is a space
-          meant to be lived in, cherished, and passed down for generations.
-        </p>
+         Spread across 14 acres near Kolthare Beach, Dapoli, Viyad Bliss is an upcoming premium gated community villa resort 
+         designed to celebrate the serene beauty of Konkan. The project offers thoughtfully planned sea-view plots and villas 
+         inspired by the timeless wada architecture. Built using authentic Kaula tiles and climate-responsive design, Viyad Bliss 
+         blends traditional craftsmanship with modern comfort while respecting the natural landscape. Developed with the expertise 
+         of local artisans who understand this land deeply, Viyad Bliss is more than just a destination — it is a place to live 
+         peacefully, create lasting memories, and build a legacy for generations to come. ✨🌿🌊        </p>
 
         <div className="grid">
 

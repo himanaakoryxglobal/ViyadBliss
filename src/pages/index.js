@@ -362,7 +362,7 @@ function HomePage({ Herodata }) {
 
 
         
-         <BuiltForGenerations/>
+         {/* <BuiltForGenerations/> */}
 
 
       {/* =========================
