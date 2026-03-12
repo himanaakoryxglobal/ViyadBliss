@@ -113,7 +113,7 @@ export default function BillboardScene() {
 
 
       {/* CAR 2 */}
-      <motion.img
+      {/* <motion.img
         src="/img/car1.png"
         className="car"
         style={{ transform: "scaleX(-1)", bottom: "50px" }}
@@ -124,7 +124,7 @@ export default function BillboardScene() {
           ease: "linear",
           delay: 3
         }}
-      />
+      /> */}
 
 
 <style jsx global>{`
