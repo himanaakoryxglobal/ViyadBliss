@@ -1,7 +1,7 @@
 export const commitmentImages = [
-  "/others/img/111.png",
-  "/others/img/112.png",
-  "/others/img/113.png",
+  "/img/others/111.png",
+  "/img/others/112.png",
+  "/img/others/113.png",
 ];
 
 export const commitmentContent = {

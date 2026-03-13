@@ -13,73 +13,90 @@ import {
 } from "@/data/commitment/commitmentData";
 
 export default function CommitmentSection() {
+
+  const { label, title, description, points, button, background } =
+    commitmentContent;
+
   return (
     <section className="commitment">
 
       {/* Background Image */}
-
       <Image
-        src={commitmentContent.background}
+        src={background}
         alt="Viyad Bliss Background"
         fill
         priority
         className="bgImage"
       />
 
-      <div className="overlay"></div>
+      <div className="overlay" />
 
       <div className="container">
 
-        {/* Left Content */}
+        {/* LEFT CONTENT */}
 
         <div className="content">
 
-          <span className="label text-white">
-            {commitmentContent.label}
+          <span className="label text-white ">
+            {label}
           </span>
 
-          <h2 className="text-white">{commitmentContent.title}</h2>
+          <h2 className="text-white text-centerw">{title}</h2>
 
           <p className="desc text-white">
-            {commitmentContent.description}
+            {description}
           </p>
 
           <ul>
-            {commitmentContent.points.map((point, index) => (
-              <li key={index}  className="text-white">
+            {points.map((point, index) => (
+              <li key={index}>
                 <strong>{point.title}:</strong> {point.text}
               </li>
             ))}
           </ul>
 
           <button className="cta">
-            {commitmentContent.button}
+            {button.label || button}
           </button>
 
         </div>
 
-        {/* Image Slider */}
+
+        {/* IMAGE SLIDER */}
 
         <div className="sliderWrapper">
 
           <Swiper
             modules={[Autoplay, Navigation]}
-            autoplay={{ delay: 3000 }}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false
+            }}
             navigation
             loop
+            speed={200}
             className="imageSlider"
           >
+
             {commitmentImages.map((img, index) => (
+
               <SwiperSlide key={index}>
-                <Image
-                  src={img}
-                  alt="Viyad Bliss"
-                  width={420}
-                  height={320}
-                  className="slideImage"
-                />
+
+                <div className="imageBox">
+
+                  <Image
+                    src={img}
+                    alt={`Viyad Bliss ${index}`}
+                    fill
+                    className="slideImage"
+                  />
+
+                </div>
+
               </SwiperSlide>
+
             ))}
+
           </Swiper>
 
         </div>
@@ -90,7 +107,7 @@ export default function CommitmentSection() {
 
         .commitment{
           position:relative;
-          height:650px;
+          min-height:650px;
           display:flex;
           align-items:center;
           overflow:hidden;
@@ -107,7 +124,7 @@ export default function CommitmentSection() {
           background:linear-gradient(
             90deg,
             rgba(0,0,0,0.85) 0%,
-            rgba(0,0,0,0.7) 40%,
+            rgba(0,0,0,0.65) 40%,
             rgba(0,0,0,0.35) 65%,
             rgba(0,0,0,0) 100%
           );
@@ -121,20 +138,24 @@ export default function CommitmentSection() {
           width:100%;
           margin:auto;
           padding:0 40px;
+
           display:flex;
-          justify-content:space-between;
           align-items:center;
+          justify-content:space-between;
+
           gap:60px;
         }
 
+        /* LEFT */
+
         .content{
-          max-width:550px;
+          max-width:540px;
           color:white;
         }
 
         .label{
           font-size:14px;
-          opacity:0.85;
+          opacity:.8;
           margin-bottom:10px;
           display:block;
         }
@@ -153,44 +174,66 @@ export default function CommitmentSection() {
         }
 
         ul{
-          padding-left:20px;
+          padding-left:18px;
           margin-bottom:30px;
         }
 
         li{
           margin-bottom:10px;
+          line-height:1.6;
         }
 
         .cta{
           background:#d97706;
           border:none;
-          padding:14px 28px;
+          padding:14px 30px;
           border-radius:8px;
           color:white;
           font-size:16px;
+          font-weight:600;
           cursor:pointer;
+          transition:.3s;
         }
 
-        /* Slider */
+        .cta:hover{
+          background:#b45309;
+        }
+
+        /* SLIDER */
 
         .sliderWrapper{
           width:420px;
         }
 
-        .slideImage{
+        .imageBox{
+          position:relative;
+          width:100%;
+          height:620px;
           border-radius:16px;
+          overflow:hidden;
+        }
+
+        .slideImage{
           object-fit:cover;
         }
+
+        /* MOBILE */
 
         @media (max-width:900px){
 
           .container{
             flex-direction:column;
             text-align:center;
+            gap:40px;
+          }
+
+          h2{
+            font-size:36px;
           }
 
           .sliderWrapper{
             width:100%;
+            max-width:420px;
           }
 
         }

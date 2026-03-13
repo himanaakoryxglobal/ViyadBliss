@@ -49,10 +49,6 @@ const HeaderPremium = () => {
 
             <Link href="/lifestyle">Viyad Lifestyle</Link>
 
-            <Link href="/gallery">Gallery</Link>
-
-            <Link href="/location">Location</Link>
-
             <Link href="/contact">Contact</Link>
 
           </nav>
