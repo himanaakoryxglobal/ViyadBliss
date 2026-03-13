@@ -1,4 +1,4 @@
-import { LayoutOne } from "@/layouts";
+import { LayoutFive } from "@/layouts";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Slider from "react-slick";
@@ -72,7 +72,7 @@ function AboutUs() {
 
   return (
     <>
-      <LayoutOne topbar={true}>
+      <LayoutFive topbar={true}>
         <ShopBreadCrumb
           title="About Us"
           sectionPace=""
@@ -202,7 +202,7 @@ function AboutUs() {
             </Row>
           </Container>
         </div> */}
-      </LayoutOne>
+      </LayoutFive>
     </>
   );
 }

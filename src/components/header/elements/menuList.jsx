@@ -60,8 +60,11 @@ const MenuList = ({ addListing }) => {
       <li className="menu-icon" >
             <Link href="/service">Services</Link>
       </li>
+      <li className="menu-icon" >
+            <Link href="/lifestylepage">Kokan Lifestyle</Link>
+      </li>
 
-      {/* <li className="menu-icon">
+      {/* <li className="menu-icon
         <Link href="#">
           Property <FaPlus />
         </Link>
@@ -194,7 +197,7 @@ const MenuList = ({ addListing }) => {
                 <Link href="/shop/right-sidebar">Property right sidebar</Link>
               </li>
               <li>
-                <Link href="/shop/grid">Property Grid</Link>
+                <Link href="/shop/grid">Property Grid</Link>w
               </li>
               <li>
                 <Link href="/shop/list">Property List</Link>

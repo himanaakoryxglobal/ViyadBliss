@@ -1,4 +1,4 @@
-import { LayoutOne } from "@/layouts";
+import { LayoutFive } from "@/layouts";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Slider from "react-slick";
@@ -11,6 +11,8 @@ import CallToAction from "@/components/callToAction";
 import AboutUsStyletwo from "@/components/aboutUs/aboutUsStyleTwo";
 import Feature from "@/components/features";
 import featureData from "@/data/service"
+import ViyadHero from "@/components/storycard/SingleImageCard";
+import ViyadOfferings from "@/components/offerings/ViyadOfferings";
 
 function Service() {
   const services = getProducts(featureData, "buying", "featured", 6);
@@ -54,7 +56,7 @@ function Service() {
 
   return (
     <>
-      <LayoutOne topbar={true}>
+      <LayoutFive topbar={true}>
         <ShopBreadCrumb
           title="What We Do"
           sectionPace=""
@@ -63,7 +65,7 @@ function Service() {
 
         <AboutUsStyletwo sectionSpace="pb-90" />
 
-        <Feature
+        {/* <Feature
           classes="section-bg-1"
           servicebtn={false}
           iconTag={true}
@@ -74,7 +76,9 @@ function Service() {
             subTitle: "Our Services",
             title: "Our Core Services",
           }}
-        />
+        /> */}
+
+        <ViyadOfferings/>
 
 
         {/* <!-- BLOG AREA START (blog-3) -->  */}
@@ -107,7 +111,7 @@ function Service() {
         </div>
         {/* <!-- BLOG AREA END --> */}
 
-        <div className="ltn__call-to-action-area call-to-action-6 before-bg-bottom">
+        {/* <div className="ltn__call-to-action-area call-to-action-6 before-bg-bottom">
           <Container>
             <Row>
               <Col xs={12}>
@@ -115,8 +119,8 @@ function Service() {
               </Col>
             </Row>
           </Container>
-        </div>
-      </LayoutOne>
+        </div> */}
+      </LayoutFive>
     </>
   );
 }
