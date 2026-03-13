@@ -1,9 +1,9 @@
 "use client";
 
 import AmenitiesHero from "@/components/aminities/AmenitiesHero";
-import { amenitiesSections } from "@/data/aminities/amenitiesData";
 import { LayoutFive } from "@/layouts";
-
+import AmenitiesSec from "@/components/aminities/AmenitiesSec";
+import { amenitiesSections } from "@/data/aminities/amenitiesData";
 export default function AmenitiesSection() {
 
   return (
@@ -12,7 +12,9 @@ export default function AmenitiesSection() {
 
     <AmenitiesHero/>
 
-    <section className="amenities-section">
+    <AmenitiesSec/>
+
+    {/* <section className="amenities-section">
 
       <div className="container">
 
@@ -132,7 +134,9 @@ export default function AmenitiesSection() {
 
       `}</style>
 
-    </section>
+    </section> */} 
+
+    
   </LayoutFive>
 
   );

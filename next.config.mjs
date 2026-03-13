@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
+  trailingSlash: true,
+
   reactCompiler: false,
   reactStrictMode: true,
 
@@ -8,6 +11,7 @@ const nextConfig = {
   },
 
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
