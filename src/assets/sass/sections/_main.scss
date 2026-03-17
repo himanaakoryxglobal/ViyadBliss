@@ -49,6 +49,68 @@
 # Time Schedule Area
 
 ============================================================= */
+/* SPREAD AMENITIES ACROSS THE LAND */
+
+.garden{
+top:55%;
+right:35%;
+}
+
+.track{
+top:63%;
+right:55%;
+}
+
+.clubhouse{
+top:48%;
+right:18%;
+}
+
+.gate{
+top:72%;
+right:40%;
+}
+
+/* optional extra if using cycling track */
+
+.cycling{
+top:60%;
+right:25%;
+} 
+
+.amenity{
+position:absolute;
+color:white;
+font-size:28px;
+font-weight:800;
+letter-spacing:1px;
+
+text-shadow:0 6px 18px rgba(0,0,0,.8);
+
+padding:4px 8px;
+}
+
+/* ROAD AMENITY POSITIONS */
+
+.roadAmenity1{
+bottom:140px;
+left:15%;
+}
+
+.roadAmenity2{
+bottom:150px;
+left:35%;
+}
+
+.roadAmenity3{
+bottom:135px;
+left:55%;
+}
+
+.roadAmenity4{
+bottom:145px;
+left:75%;
+}
 
 /* ----------------------------------------------------
     Common CSS

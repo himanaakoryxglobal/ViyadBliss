@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -12,120 +11,121 @@ const ads = [
   "/img/storycard-03.jpg"
 ];
 
+/* road amenities */
+
+const roadAmenities = [
+  "🏊 Swimming Pool",
+  "🎾 Sports Court",
+  "🧘 Yoga Deck",
+  "🔥 Bonfire Area",
+  "🚴 Cycling Track"
+];
+
+/* plot positions near house */
+
+const plotPositions = [
+  { top: "52%", right: "35%" },
+  { top: "60%", right: "52%" },
+  { top: "47%", right: "20%" },
+  { top: "68%", right: "40%" }
+];
+
 export default function BillboardScene() {
 
   const [current, setCurrent] = useState(0);
+  const [amenity, setAmenity] = useState("");
+  const [position, setPosition] = useState({});
+
+  /* billboard rotation */
 
   useEffect(() => {
+
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % ads.length);
     }, 3000);
 
     return () => clearInterval(interval);
+
   }, []);
+
+  /* show amenity when cursor on road */
+
+  const handleRoadMove = () => {
+
+    const randomAmenity =
+      roadAmenities[Math.floor(Math.random() * roadAmenities.length)];
+
+    const randomPlot =
+      plotPositions[Math.floor(Math.random() * plotPositions.length)];
+
+    setAmenity(randomAmenity);
+    setPosition(randomPlot);
+
+  };
 
   return (
 
-    <section className="scene">
+<section className="scene">
 
-      {/* BACKGROUND */}
-      <div className="background">
-        <Image
-          src="/img/konkan-bg.png"
-          alt="Konkan Landscape"
-          fill
-          priority
-        />
-      </div>
+{/* BACKGROUND */}
 
-      {/* SUNLIGHT */}
-      <div className="sun-rays"></div>
+<div className="background">
+<Image
+src="/img/konkan-bg.png"
+alt="Konkan Landscape"
+fill
+priority
+/>
+</div>
 
-      {/* CLOUDS */}
-      <div className="clouds"></div>
+{/* BILLBOARD (UNCHANGED) */}
 
+<div className="billboard">
 
-      {/* BIRD FLOCK */}
+<Image
+src="/img/2359035.png"
+alt="billboard"
+fill
+className="billboard-frame"
+/>
 
-      <motion.img
-        src="https://pngimg.com/uploads/birds/birds_PNG30.png"
-        className="birds"
-        style={{ top: "70px", left: "-200px" }}
-        animate={{ x: ["0vw", "120vw"] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-      />
+<div className="ad-area">
+<Image
+src={ads[current]}
+alt="ad"
+fill
+/>
+</div>
 
-      <motion.img
-        src="https://pngimg.com/uploads/birds/birds_PNG30.png"
-        className="birds"
-        style={{ top: "100px", left: "-260px", transform: "scale(.8)" }}
-        animate={{ x: ["0vw", "120vw"] }}
-        transition={{ duration: 12, repeat: Infinity, delay: 0.5 }}
-      />
+</div>
 
-      <motion.img
-        src="https://pngimg.com/uploads/birds/birds_PNG30.png"
-        className="birds"
-        style={{ top: "100px", left: "-140px", transform: "scale(.8)" }}
-        animate={{ x: ["0vw", "120vw"] }}
-        transition={{ duration: 12, repeat: Infinity, delay: 1 }}
-      />
+{/* AMENITY DISPLAY */}
 
+{amenity && (
 
-      {/* BILLBOARD */}
-      <div className="billboard">
+<motion.div
+className="amenity"
+style={position}
+key={amenity}
+initial={{opacity:0,scale:.8}}
+animate={{opacity:1,scale:1}}
+transition={{duration:.3}}
+>
 
-        <Image
-          src="/img/2359035.png"
-          alt="billboard"
-          fill
-          className="billboard-frame"
-        />
+{amenity}
 
-        <div className="ad-area">
-          <Image
-            src={ads[current]}
-            alt="ad"
-            fill
-          />
-        </div>
+</motion.div>
 
-      </div>
+)}
 
+{/* ROAD AREA */}
 
-      {/* ROAD */}
-      <div className="road">
-        <div className="road-lines"></div>
-      </div>
-
-
-      {/* CAR 1 */}
-      <motion.img
-        src="/img/car1.png"
-        className="car"
-        animate={{ x: ["-300px", "120vw"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 8,
-          ease: "linear"
-        }}
-      />
-
-
-      {/* CAR 2 */}
-      {/* <motion.img
-        src="/img/car1.png"
-        className="car"
-        style={{ transform: "scaleX(-1)", bottom: "50px" }}
-        animate={{ x: ["120vw", "-300px"] }}
-        transition={{
-          repeat: Infinity,
-          duration: 10,
-          ease: "linear",
-          delay: 3
-        }}
-      /> */}
-
+<div
+className="road"
+onMouseMove={handleRoadMove}
+>
+<div className="road-lines"></div>
+</div>
 
 <style jsx global>{`
 
@@ -133,11 +133,7 @@ export default function BillboardScene() {
 position:relative;
 width:100%;
 height:900px;
-background:#e6e6e6;
 overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
 }
 
 /* background */
@@ -151,66 +147,7 @@ left:0;
 z-index:0;
 }
 
-.background img{
-object-fit:cover;
-}
-
-/* sunlight */
-
-.sun-rays{
-position:absolute;
-top:-150px;
-right:-150px;
-width:500px;
-height:500px;
-
-background:radial-gradient(circle,
-rgba(255,210,120,0.7) 0%,
-rgba(255,210,120,0.4) 30%,
-rgba(255,210,120,0.15) 60%,
-transparent 80%);
-
-animation:sunPulse 8s ease-in-out infinite;
-z-index:1;
-}
-
-@keyframes sunPulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.08)}
-100%{transform:scale(1)}
-}
-
-/* clouds */
-
-.clouds{
-position:absolute;
-top:0;
-left:0;
-width:200%;
-height:35%;
-background:url("https://pngimg.com/uploads/cloud/cloud_PNG16.png") repeat-x;
-background-size:contain;
-opacity:.6;
-z-index:3;
-animation:cloudMove 80s linear infinite;
-}
-
-@keyframes cloudMove{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
-}
-
-/* birds */
-
-.birds{
-position:absolute;
-top:80px;
-width:120px;
-z-index:4;
-opacity:.9;
-}
-
-/* billboard */
+/* billboard unchanged */
 
 .billboard{
 position:relative;
@@ -222,12 +159,8 @@ z-index:5;
 }
 
 .billboard-frame{
-width:100%;
-height:100%;
 object-fit:contain;
 }
-
-/* ad area */
 
 .ad-area{
 position:absolute;
@@ -239,8 +172,15 @@ overflow:hidden;
 border-radius:6px;
 }
 
-.ad-area img{
-object-fit:cover;
+/* amenity */
+
+.amenity{
+position:absolute;
+color:white;
+font-size:28px;
+font-weight:800;
+text-shadow:0 5px 15px rgba(0,0,0,.7);
+z-index:7;
 }
 
 /* road */
@@ -259,7 +199,6 @@ position:absolute;
 top:50%;
 width:100%;
 height:6px;
-
 background:repeating-linear-gradient(
 to right,
 white 0px,
@@ -269,71 +208,9 @@ transparent 80px
 );
 }
 
-/* cars */
-
-.car{
-position:absolute;
-bottom:20px;
-width:220px;
-z-index:6;
-filter:drop-shadow(0 6px 6px rgba(0,0,0,.3));
-}
-
-/* tablet */
-
-@media(max-width:992px){
-
-.billboard{
-width:420px;
-height:260px;
-margin-left:-400px;
-}
-
-.car{
-width:180px;
-}
-
-}
-
-/* mobile */
-
-@media(max-width:768px){
-
-.scene{
-height:70vh;
-}
-
-.billboard{
-width:300px;
-height:200px;
-margin-left:-150px;
-margin-top:120px;
-}
-
-.car{
-width:140px;
-}
-
-}
-
-/* small mobile */
-
-@media(max-width:480px){
-
-.billboard{
-width:240px;
-height:160px;
-margin-left:-120px;
-}
-
-.car{
-width:110px;
-}
-
-}
-
 `}</style>
 
-    </section>
+</section>
+
   );
-}
+}e

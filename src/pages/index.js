@@ -204,11 +204,14 @@ function HomePage({ Herodata }) {
          HERO
       ========================= */}
 
-      <HeroSectionStyleFive data={Herodata} />
+       <BillboardScene/>   
+
+      {/* <HeroSectionStyleFive data={Herodata} /> */}
       {/* <HeroVideo/> */}
       {/* <HeroSlider/>   */}
       {/* <HeaderPremium/> */}
 
+      
 
       {/* =========================
          ABOUT SECTION
